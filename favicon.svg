@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1B2735"/>
+      <stop offset="100%" style="stop-color:#090A0F"/>
+    </linearGradient>
+    
+    <filter id="modernGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="0.5" result="blur1"/>
+      <feFlood flood-color="#a855f7" flood-opacity="0.8" result="color"/>
+      <feComposite operator="in" in="color" in2="blur1" result="glow1"/>
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur2"/>
+      <feFlood flood-color="#93a5cf" flood-opacity="0.3" result="color2"/>
+      <feComposite operator="in" in="color2" in2="blur2" result="glow2"/>
+      <feMerge>
+        <feMergeNode in="glow2"/>
+        <feMergeNode in="glow1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background with website's theme -->
+  <circle cx="50" cy="50" r="50" fill="url(#bgGradient)"/>
+  
+  <!-- Minimalist Torii Gate with cosmic theme -->
+  <g filter="url(#modernGlow)" transform="translate(15, 25) scale(0.7)">
+    <!-- Main top beam with oni horns -->
+    <path 
+      d="M30 30
+         L40 25
+         L45 15 L50 25  /* Left horn */
+         L55 23
+         L60 25 L65 15  /* Right horn */
+         L70 25
+         L80 30
+         L70 28
+         L65 20 L60 28  /* Right horn bottom */
+         L55 26
+         L50 28 L45 20  /* Left horn bottom */
+         L40 28
+         Z" 
+      fill="#a855f7" 
+      opacity="0.95"
+    />
+    
+    <!-- Stylized bottom beam -->
+    <path 
+      d="M32 40
+         L40 38
+         L45 42 L50 38 L55 42  /* Left fangs */
+         L55 38
+         L60 42 L65 38 L70 42  /* Right fangs */
+         L78 40
+         L70 39
+         L65 43 L60 39 L55 43  /* Right fangs bottom */
+         L55 39
+         L50 43 L45 39 L40 43  /* Left fangs bottom */
+         Z" 
+      fill="#93a5cf" 
+      opacity="0.9"
+    />
+    
+    <!-- Sleek pillars -->
+    <path d="M40 28 L42 30 L40 65 L38 30 Z" fill="#a855f7" opacity="0.9"/>
+    <path d="M70 28 L72 30 L70 65 L68 30 Z" fill="#a855f7" opacity="0.9"/>
+  </g>
+</svg>
